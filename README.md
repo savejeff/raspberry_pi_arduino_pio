@@ -1,12 +1,13 @@
-# raspberry_pi_arduino_pio
+# Raspberry Pi Arduino for PlatformIO Native
 Arduino Style Firmware/Library based on joan2937/lg written for PlatformIO Native
 
 
 ## Features
 
 * Arduino style digital Functions (pinMode, digitalWrite, digitalRead)
-* Arduino TwoWire (100% conform to meta standart)
+* Arduino TwoWire (100% conform to meta standard)
 * Arduino SPI (99% conform to meta standart, Hardware and Software Chip Sleect)
+    - when Hardware CS Pins are used, SPI.transfer controlls CS. This is different from the Arduino behaviour. To get 100% the expected behaviour, use Software Chip Selects
 
 
 
