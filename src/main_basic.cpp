@@ -1,7 +1,7 @@
 
 #include "main.h"
 
-#ifdef ENABLE_MAIN_EMPTY
+#ifdef ENABLE_MAIN_BASIC
 
 #include "Arduino.h"
 
@@ -17,4 +17,4 @@ void loop() {
         terminate();
 }
 
-#endif // ENABLE_MAIN_EMPTY
+#endif // ENABLE_MAIN_BASIC

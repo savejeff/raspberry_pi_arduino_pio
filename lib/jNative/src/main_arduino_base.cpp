@@ -1,8 +1,3 @@
-
-#include "main.h"
-
-#ifdef ENABLE_MAIN_ARDUINO
-
 #include "Arduino.h"
 
 // Arduino GPIO functions
@@ -33,5 +28,3 @@ int main()
 
 	GPIO_end();
 }
-
-#endif // ENABLE_MAIN_ARDUINO

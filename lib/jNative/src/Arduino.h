@@ -63,6 +63,7 @@ bool pinMode(uint8_t pin, uint8_t mode);
 void digitalWrite(uint8_t pin, uint8_t val);
 int digitalRead(uint8_t pin);
 
+void terminate();
 
 //float random();
 
@@ -70,9 +71,8 @@ int digitalRead(uint8_t pin);
 	#define __attribute__(...)
 #endif 
 
-/*
+
 #ifndef F
 //Define macro for strings stored in flash.
 #define F(str) (str)
 #endif  // F
-*/

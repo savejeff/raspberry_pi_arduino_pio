@@ -6,8 +6,11 @@ Arduino Style Firmware/Library based on joan2937/lg written for PlatformIO Nativ
 
 * Arduino style digital Functions (pinMode, digitalWrite, digitalRead)
 * Arduino TwoWire (100% conform to meta standard)
+    - Enable I2C before use
 * Arduino SPI (99% conform to meta standart, Hardware and Software Chip Sleect)
+    - Enable I2C before use
     - when Hardware CS Pins are used, SPI.transfer controlls CS. This is different from the Arduino behaviour. To get 100% the expected behaviour, use Software Chip Selects
+* EEPROM Emulation
 
 
 
