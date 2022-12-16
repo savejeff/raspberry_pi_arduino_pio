@@ -109,4 +109,14 @@ int digitalRead(uint8_t pin)
 }
 
 
+void analogReadResolution(int resolution_bits)
+{
+	// not supported
+}
+
+int analogRead(uint8_t pin)
+{
+	return 0;
+}
+
 #endif // VARIANTE_NATIVE_LINUX

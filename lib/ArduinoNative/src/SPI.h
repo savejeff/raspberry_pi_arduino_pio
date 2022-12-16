@@ -68,3 +68,6 @@ protected:
 
 	
 };
+
+
+extern SPIClass SPI;

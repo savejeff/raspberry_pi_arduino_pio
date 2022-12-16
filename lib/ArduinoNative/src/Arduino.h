@@ -1,7 +1,8 @@
-#pragma once 
+#pragma once
 
+//#define PLATFORM_NATIVE
 
-typedef unsigned char byte;
+//typedef unsigned char byte;
 
 #include <time.h>
 
@@ -10,9 +11,11 @@ typedef unsigned char byte;
 #include <stdint.h>
 #include <math.h>
 #include <cstring>
+#include <stdarg.h>
 
-#include <string>
-typedef std::string String;
+#include "WCharacter.h"
+#include "WString.h"
+
 
 //#define DEC 10
 
@@ -26,9 +29,9 @@ typedef std::string String;
 #define LOW               0x0
 #define HIGH              0x1
 
-//GPIO FUNCTIONS
+// GPIO FUNCTIONS
 #define INPUT             0x01
-// Changed OUTPUT from 0x02 to behave the same as Arduino pinMode(pin,OUTPUT) 
+// Changed OUTPUT from 0x02 to behave the same as Arduino pinMode(pin, OUTPUT) 
 // where you can read the state of pin even when it is set as OUTPUT
 #define OUTPUT            0x03 
 #define PULLUP            0x04
@@ -39,7 +42,7 @@ typedef std::string String;
 #define OUTPUT_OPEN_DRAIN 0x12
 #define ANALOG            0xC0
 
-//Interrupt Modes
+// Interrupt Modes
 #define DISABLED  0x00
 #define RISING    0x01
 #define FALLING   0x02
@@ -50,11 +53,17 @@ typedef std::string String;
 #define ONHIGH_WE 0x0D
 
 
+
 #define sq(x) ((x)*(x))
+
+#define bit(b) (1UL << (b))
+
+
 
 uint32_t millis();
 uint32_t micros();
 void delay(uint32_t ms);
+void delayMicroseconds(uint32_t us);
 
 #define radians(deg) ((deg)*DEG_TO_RAD)
 #define degrees(rad) ((rad)*RAD_TO_DEG)
@@ -63,9 +72,25 @@ bool pinMode(uint8_t pin, uint8_t mode);
 void digitalWrite(uint8_t pin, uint8_t val);
 int digitalRead(uint8_t pin);
 
+void analogReadResolution(int resolution_bits);
+int analogRead(uint8_t pin);
 void terminate();
 
+
+
+void randomSeed(uint32_t seed);
 //float random();
+
+#include <cstdlib>
+static inline long random(long v)
+{
+	return rand() % v;
+}
+
+static inline long random(long min, long max)
+{
+	return rand() % (max - min + 1) + min;
+}
 
 #ifndef __attribute__
 	#define __attribute__(...)
@@ -76,3 +101,21 @@ void terminate();
 //Define macro for strings stored in flash.
 #define F(str) (str)
 #endif  // F
+
+
+void yield();
+
+
+
+#include "Print.h"
+#include "Stream.h"
+#include "Printable.h"
+
+
+
+#define RTC_DATA_ATTR
+#define RTC_NOINIT_ATTR
+#define DMA_ATTR
+
+
+#include "./pgmspace.h"

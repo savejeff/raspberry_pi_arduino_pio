@@ -34,7 +34,7 @@ public:
 
 	// Set Bus Frequency
 	//freq: [Hz] transmission frquency
-	virtual void setFrequency(uint32_t freq) {
+	virtual void setClock(uint32_t freq) {
         // freq is fixed at boot time
         // edit to config.txt is needed
         // default is 100kHz
@@ -140,3 +140,5 @@ protected:
 	size_t _read(uint8_t * data, size_t quantity);
 
 };
+
+extern TwoWire Wire;

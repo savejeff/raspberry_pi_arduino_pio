@@ -192,3 +192,7 @@ size_t TwoWire::_read(uint8_t* data, size_t quantity)
 
 	return lgI2cReadDevice(i2ch, (char*) data, quantity);
 }
+
+
+
+TwoWire Wire(1);

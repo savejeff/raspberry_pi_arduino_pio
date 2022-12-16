@@ -20,7 +20,7 @@ Arduino Style Firmware/Library based on joan2937/lg written for PlatformIO Nativ
 
 In order to compile and use the project, a working PlatformIO installation in Visual Studio Code is needed. Furthermore the lgpio library must be installed. This can be done with for example (see https://github.com/joan2937/lg):
 
-```
+```shell
 wget https://github.com/joan2937/lg/archive/master.zip
 unzip master.zip
 cd lg-master

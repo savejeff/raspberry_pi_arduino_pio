@@ -67,12 +67,31 @@ void delay(uint32_t ms)
 	
 }
 
+void delayMicroseconds(uint32_t us) {
+	int ms = us / 1000;
+	if(ms < 1)
+		ms = 1;
+	delay(ms);
+}
+
+
+
+void randomSeed(uint32_t seed)
+{
+	// https://cplusplus.com/reference/cstdlib/srand/
+	//srand (time(NULL));
+	srand(seed);
+}
+
 
 /*
-
 float random()
 {
 	return ((float) rand() / RAND_MAX);
 }
 */
 
+void yield()
+{
+	
+}

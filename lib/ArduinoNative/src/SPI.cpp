@@ -14,7 +14,11 @@ void SPIClass::begin() {
 }
 
 void SPIClass::end() {
-
+	if(spih >= 0)
+	{
+		lgSpiClose(spih);
+		spih = -1;
+	}
 }
 
 
@@ -80,3 +84,6 @@ void SPIClass::setCS(uint8_t pin, bool state) {
 	if(pin >= 2)
 		digitalWrite(pin, state);
 }
+
+
+SPIClass SPI(0, 0);

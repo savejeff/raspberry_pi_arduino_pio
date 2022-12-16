@@ -16,7 +16,7 @@ namespace fs = std::filesystem;
 static std::fstream file;
 
 
-#define path "mem.bin"
+#define path "tmp/mem.bin"
 
 EEPROMClass::EEPROMClass(void)
 {
